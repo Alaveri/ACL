@@ -131,7 +131,7 @@
   </data>
   <data name="FullCountryCode" xml:space="preserve">
     <value>en-US</value>
-    <comment>The full company code of the language, for example "en-US"</comment>
+    <comment>The full country code of the language, for example "en-US"</comment>
   </data>
   <data name="Identifier" xml:space="preserve">
     <value>AmericanEnglish</value>
