@@ -68,13 +68,11 @@ namespace ACL.Data.Sql
         /// <returns>a DataSet that contains the result set.</returns>
         public override DataSet ExecuteDataSet()
         {
-            using (var command = PrepareCommand(Options))
-            using (var da = new SqlDataAdapter(command))
-            using (var ds = new DataSet())
-            {
-                da.Fill(ds);
-                return ds;
-            }
+            using var command = PrepareCommand(Options);
+            using var da = new SqlDataAdapter(command);
+            using var ds = new DataSet();
+            da.Fill(ds);
+            return ds;
         }
 
         /// <summary>
@@ -83,13 +81,11 @@ namespace ACL.Data.Sql
         /// <returns>a DataSet that contains the result set.</returns>
         public async override Task<DataSet> ExecuteDataSetAsync()
         {
-            using (var command = PrepareCommand(Options))
-            using (var da = new SqlDataAdapter(command))
-            using (var ds = new DataSet())
-            {
-                await Task.Run(() => da.Fill(ds)).ConfigureAwait(false);
-                return ds;
-            }
+            using var command = PrepareCommand(Options);
+            using var da = new SqlDataAdapter(command);
+            using var ds = new DataSet();
+            await Task.Run(() => da.Fill(ds)).ConfigureAwait(false);
+            return ds;
         }
 
         /// <summary>
@@ -123,10 +119,8 @@ namespace ACL.Data.Sql
         /// <returns>Thefirst item in the result set.</returns>
         public override TResult ExecuteScalar<TResult>()
         {
-            using (var command = PrepareCommand(Options))
-            {
-                return (TResult)command.ExecuteScalar();
-            }
+            using var command = PrepareCommand(Options);
+            return (TResult)command.ExecuteScalar();
         }
 
         /// <summary>
@@ -136,11 +130,9 @@ namespace ACL.Data.Sql
         /// <returns>Thefirst item in the result set.</returns>
         public override async Task<TResult> ExecuteScalarAsync<TResult>()
         {
-            using (var command = PrepareCommand(Options))
-            {
-                var result = await command.ExecuteScalarAsync().ConfigureAwait(false);
-                return (TResult)result;
-            }
+            using var command = PrepareCommand(Options);
+            var result = await command.ExecuteScalarAsync().ConfigureAwait(false);
+            return (TResult)result;
         }
 
         /// <summary>
@@ -148,10 +140,8 @@ namespace ACL.Data.Sql
         /// </summary>
         public override void Execute()
         {
-            using (var command = PrepareCommand(Options))
-            {
-                command.ExecuteNonQuery();
-            }
+            using var command = PrepareCommand(Options);
+            command.ExecuteNonQuery();
         }
 
         /// <summary>
@@ -159,10 +149,8 @@ namespace ACL.Data.Sql
         /// </summary>
         public override async void ExecuteAsync()
         {
-            using (var command = PrepareCommand(Options))
-            {
-                await command.ExecuteNonQueryAsync().ConfigureAwait(false);
-            }
+            using var command = PrepareCommand(Options);
+            await command.ExecuteNonQueryAsync().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -170,10 +158,8 @@ namespace ACL.Data.Sql
         /// </summary>
         public override XmlReader ExecuteXmlReader()
         {
-            using (var command = PrepareCommand(Options))
-            {
-                return command.ExecuteXmlReader();
-            }
+            using var command = PrepareCommand(Options);
+            return command.ExecuteXmlReader();
         }
 
         /// <summary>
@@ -181,10 +167,8 @@ namespace ACL.Data.Sql
         /// </summary>
         public override async Task<XmlReader> ExecuteXmlReaderAsync()
         {
-            using (var command = PrepareCommand(Options))
-            {
-                return await command.ExecuteXmlReaderAsync().ConfigureAwait(false);
-            }
+            using var command = PrepareCommand(Options);
+            return await command.ExecuteXmlReaderAsync().ConfigureAwait(false);
         }
 
         /// <summary>
