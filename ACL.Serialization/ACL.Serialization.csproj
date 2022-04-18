@@ -2,9 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
     <Description>Provides serialization-related utilities.</Description>
+     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <BaseOutputPath>..\out</BaseOutputPath>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

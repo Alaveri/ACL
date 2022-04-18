@@ -83,7 +83,7 @@ namespace ACL.Data
         /// <summary>
         /// Creates a new database query as a direct table access.
         /// </summary>
-        /// <param name="sql">The sql statement to execute.</param>
+        /// <param name="name">The name of the table.</param>
         /// <returns>An IDatabaseQuery configured as direct table access.</returns>
         public abstract IDatabaseQuery TableDirect(string name);
 

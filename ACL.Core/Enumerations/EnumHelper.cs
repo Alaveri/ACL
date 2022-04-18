@@ -75,7 +75,7 @@ namespace ACL.Core.Enumerations
         /// <summary>
         /// Gets the values identifiers of an enum type where the enum values are decorated with an EnumDescriptor attribute as a Dictionary.   
         /// </summary>
-        /// <param name="enumType">The type of enum to parse.</param>
+        /// <typeparam name="TEnum">The enumerable type.</typeparam>
         /// <returns>The identifier and value combinations of the enum.</returns>
         public static IDictionary<TEnum, string> GetValuesAndIdentifiers<TEnum>() where TEnum : struct, Enum
         {

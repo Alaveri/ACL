@@ -25,6 +25,7 @@ namespace ACL.Globalization
         /// specified language reader.
         /// </summary>
         /// The culture information used during translations.
+        /// <param name="culture">The culture used by the data source.</param>
         /// <param name="reader">The reader used to lookup translations.</param>
         public LanguageDataSource(ILanguageReader reader, CultureInfo culture) : base(reader, null)
         {

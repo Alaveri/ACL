@@ -23,7 +23,7 @@ namespace ACL.Globalization
         /// Translates a phrase given the specified identifier.
         /// </summary>
         /// <param name="identifier">The identifier of the translated string.</param>
-        /// <returns>the translated phrase from the specified identifier./returns>
+        /// <returns>the translated phrase from the specified identifier.</returns>
         public abstract string Translate(string identifier);
 
         /// <summary>

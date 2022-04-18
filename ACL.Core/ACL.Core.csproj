@@ -5,11 +5,15 @@
         <Description>Provides utilities used to simplify common .NET coding taACL.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <BaseOutputPath>..\Out</BaseOutputPath>
     </PropertyGroup>
     <ItemGroup>
+      <Compile Remove="bin\**" />
       <Compile Remove="Properties\**" />
+      <EmbeddedResource Remove="bin\**" />
       <EmbeddedResource Remove="Properties\**" />
+      <None Remove="bin\**" />
       <None Remove="Properties\**" />
     </ItemGroup>
 

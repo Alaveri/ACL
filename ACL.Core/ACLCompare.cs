@@ -44,7 +44,7 @@ namespace ACL.Core
         /// </summary>
         /// <typeparam name="TValue">The type of the value.</typeparam>
         /// <param name="value">The value used to search.</param>
-        /// <param name="list">The sequence to search.</param>
+        /// <param name="sequence">The sequence to search.</param>
         /// <param name="comparer">An optional comparer used to compare items in the sequence to the value.</param>
         /// <returns>True of the value is in the sequence.</returns>
         public static bool InSequence<TValue>(TValue value, IComparer<TValue> comparer = null, params TValue[] sequence)

@@ -5,6 +5,8 @@
     <Company />
     <Authors>Alaveri</Authors>
     <Description>Provides test classes and functions for use with unit testing.</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

@@ -105,7 +105,7 @@ namespace ACL.Data
                 if (parameter.Value is string paramValue)
                 {
                     if (paramValue != null && parameter.Size > 0)
-                        parameter.Value = paramValue.Substring(0, Math.Min(parameter.Size, paramValue.Length));
+                        parameter.Value = paramValue[..Math.Min(parameter.Size, paramValue.Length)];
                 } 
             }
         }
@@ -124,7 +124,7 @@ namespace ACL.Data
         /// <summary>
         /// Sets the timeout for this query.
         /// </summary>
-        /// <param name="transaction">The timeout to use for queries.</param>
+        /// <param name="timeout">The timeout to use for queries.</param>
         /// <returns>this query as an IDatabaseQuery.</returns>
         public virtual IDatabaseQuery WithTimeout(TimeSpan timeout)
         {

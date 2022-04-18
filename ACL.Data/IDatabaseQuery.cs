@@ -95,7 +95,7 @@ namespace ACL.Data
         /// <summary>
         /// Sets the timeout for this query.
         /// </summary>
-        /// <param name="transaction">The timeout to use for queries.</param>
+        /// <param name="timeout">The timeout to use for queries.</param>
         /// <returns>this query as an IDatabaseQuery.</returns>
         IDatabaseQuery WithTimeout(TimeSpan timeout);
 

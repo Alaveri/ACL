@@ -16,7 +16,7 @@ namespace ACL.Globalization.Development
         /// Translates a phrase given the specified identifier.
         /// </summary>
         /// <param name="identifier">The identifier of the translated string.</param>
-        /// <returns>the translated phrase from the specified identifier./returns>
+        /// <returns>the translated phrase from the specified identifier.</returns>
         public override string Translate(string identifier)
         {
             return DataSource.Reader.GetTranslationByIdentifier(identifier, Culture);

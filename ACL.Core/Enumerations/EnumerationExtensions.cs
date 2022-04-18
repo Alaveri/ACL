@@ -35,7 +35,7 @@ namespace ACL.Core.Enumerations
         /// <summary>
         /// If an Enum is decorated with an EnumDescriptor attribute, this will return the value of the Description.
         /// </summary>
-        /// <param name="enumValue">The enum value to use.</param>
+        /// <param name="value">The enum value to use.</param>
         /// <returns>The value of the Description or null if not found.</returns>
         public static string GetDescription(this Enum value)
         {
@@ -45,7 +45,7 @@ namespace ACL.Core.Enumerations
         /// <summary>
         /// If an Enum is decorated with an EnumDescriptor attribute, this will return the value of the Identifier.
         /// </summary>
-        /// <param name="enumValue">The enum value to use.</param>
+        /// <param name="value">The enum value to use.</param>
         /// <returns>The value of the Description or null if not found.</returns>
         public static string GetIdentifier(this Enum value)
         {
