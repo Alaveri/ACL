@@ -3,6 +3,9 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>Provides utilities used to simplify common .NET coding taACL.</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+        <BaseOutputPath>..\Out</BaseOutputPath>
     </PropertyGroup>
     <ItemGroup>
       <Compile Remove="Properties\**" />

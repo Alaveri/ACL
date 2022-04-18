@@ -26,11 +26,9 @@ namespace ACL.Serialization.Xml
             var serializer = extraTypes.Length > 0 ?
                 new XmlSerializer(typeof(TObject), extraTypes):
                 new XmlSerializer(typeof(TObject));
-            using (var stream = new MemoryStream(Encoding.Unicode.GetBytes(xml)))
-            using (var textReader = new XmlTextReader(stream))
-            {
-                return (TObject)serializer.Deserialize(textReader);
-            }
+            using var stream = new MemoryStream(Encoding.Unicode.GetBytes(xml));
+            using var textReader = new XmlTextReader(stream);
+            return (TObject)serializer.Deserialize(textReader);
         }
 
         /// <summary>
@@ -48,12 +46,10 @@ namespace ACL.Serialization.Xml
                 new XmlSerializer(obj.GetType(), extraTypes) :
                 new XmlSerializer(obj.GetType());
             obj = obj ?? throw ExceptionFactory.CreateArgumentNullException(obj);
-            using (var stream = new MemoryStream())
-            using (var writer = new XmlTextWriter(stream, Encoding.Unicode))
-            {
-                serializer.Serialize(writer, obj);
-                return Encoding.Unicode.GetString(stream.ToArray());
-            }
+            using var stream = new MemoryStream();
+            using var writer = new XmlTextWriter(stream, Encoding.Unicode);
+            serializer.Serialize(writer, obj);
+            return Encoding.Unicode.GetString(stream.ToArray());
         }
     }
 }

@@ -6,6 +6,7 @@
     <Description>Provides classes for accessing generic data sources.</Description>
     <Authors>Alaveri</Authors>
     <Company>Alaveri</Company>
+    <BaseOutputPath>..\out</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
